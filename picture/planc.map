@@ -1,0 +1,23 @@
+###_sgi-version: 1
+###_sgi-format: netsite
+###_sgi-date: (968691557) Mon Sep 11 09:59:17 2000
+###_sgi-document: GROUP PICTURE
+
+#
+circle javascript:show('piero.htm') 120,120 170,120
+
+#
+circle javascript:show('mauro.htm') 260,130 310,130
+
+#
+circle javascript:show('alessio.htm') 250,50 300,50
+
+#
+circle javascript:show('oscar.htm') 360,140 410,140
+
+#
+circle javascript:show('pisell.htm') 265,385 285,385
+
+#
+circle javascript:show('orolog.htm') 375,250 382,250
+
