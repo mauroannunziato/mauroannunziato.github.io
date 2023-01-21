@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <META NAME="Generator" CONTENT="Cosmo Create 1.0.3">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+    <TITLE>Control</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffd8b1">
+<CENTER><P ALIGN="CENTER">
+<B><FONT SIZE="5">4. </FONT><FONT SIZE="5" COLOR="#0000ff">The 
+application to the control and optimization of processes for energy 
+production</FONT></B></P>
+</CENTER><P>
+</P>
+<P>
+The main social requirements about the management of energy plants are 
+focussed on the maximization of the energy efficiency and minimization 
+of environment impact (particularly as regards the reduction of NO<SUB>x</SUB>
+ and CO emissions). In this context the process control assumes an 
+importance very relevant in respect to the past, especially for the 
+combustion plants where the pollutants emissions are strictly related 
+to the modality of the process management. Also the complexity of this 
+function is widely increased because of it has to take into account 
+many targets, like economic management, low environmental impact, plant 
+stability and design constraints, energy efficiency. These aspects 
+constitute a strong stimulus to develop more advanced strategies for 
+the process control and optimization. </P>
+<P>
+Today, the methodologies for advanced control and optimization (expert 
+systems, ARM or neural predictors, process on-line simulators) are 
+surely useful for a wide fraction of the industrial requirements, but 
+they have serious limitations in many real field applications. These 
+limitations could be summarized in the following items:</P>
+<UL>
+    <LI>
+    need of strong modeling (simulators, ARM predictors) 
+    <LI>
+    need of long training (ARM-Neural predictors) 
+    <LI>
+    need of heavy knowledge from operators (expert systems) 
+    <LI>
+    fixed rules for all plant life (off-line, no dynamics, heuristics on 
+    critical measures) 
+</UL>
+<P>
+Rarely these requirements are fulfilled for industrial combustion 
+plants like waste incinerators or chambers for gas turbines. One of the 
+most serious problems for some innovative methods based on learning 
+(like neural or fuzzy control, <A HREF="refer.htm"><U><FONT
+ COLOR="#0000ff">[17]</FONT></U></A>) is that they are based on fixed 
+optimization rules and do not take into account the evolution of the 
+plant during its life (i.e. not controlled variables or constraints). 
+The learning phase is generally difficult for data lacking and the 
+development activities for process optimization require deep knowledge 
+of the specific process. Generally, these methodologies are not 
+extensible to other processes.</P>
+<P>
+New advances in the contexts of chaos theory <A HREF="refer.htm"><U><FONT
+ COLOR="#0000ff">[31,32]</FONT></U></A> (particularly in the analysis 
+of real chaotic systems and complexity), stimulate the research in this 
+direction in order to explore new approaches to the process control. In 
+particular, nonlinear dynamics allows the possibility to describe the 
+state of the process (and therefore the related performance like 
+efficiency, emissions, etc.) on the basis of the characterization of 
+its dynamics. The recent developments in the field of nonlinear data 
+analysis (dynamics invariants), make it more sensible and robust <A
+ HREF="refer.htm"><U><FONT COLOR="#0000ff">[30]</FONT></U></A>). The 
+complexity description opens the possibility of the development of a 
+continuos learning during the plant life and the continuous 
+redefinition of the optimization strategy. In spite all these promising 
+scientific developments, at present only few studies have been done in 
+order to apply them to the plant optimization and control <A
+ HREF="refer.htm"><U><FONT COLOR="#0000ff">[35].</FONT></U></A></P>
+<P>
+We would emphasize that the term <I>optimization</I> here is utilized 
+in the sense of a <I>continuous on-line adaptation of the management of 
+an existing plant</I>. The goal is to drive the process towards the 
+optimal compromise between the management targets deriving the rules 
+directly from the measurements.</P>
+<P>
+The ideas proposed in this paper are aimed to developing a new approach 
+to the optimization and control of complex processes for energy 
+production/consumption. This methodology is based on evolutionary 
+optimization and it started from some successful experiences in the 
+dynamic characterization (for diagnostics and control) for at least two 
+industrial applications (oil field diagnostics and combustion dynamic 
+characterization) <A HREF="refer.htm"><U><FONT COLOR="#0000ff">[33, 34, 
+36].</FONT></U></A> Furthermore an optimization study has shown very 
+interesting features of artificial life environment with respect to 
+more classical genetics techniques. </P>
+<P>
+&nbsp;The basic features of the proposed approach are:</P>
+<UL>
+    <LI>
+    <I>dynamics based </I>
+    <LI>
+    <I>no intensive modeling</I> (progressive training directly from 
+    the measurements) 
+    <LI>
+    able to follow the <I>plant evolution</I> 
+</UL>
+<P>
+The essence of this approach could be synthesized by the following 
+sentence<FONT COLOR="#800000">:<B> &quot;not <I>control rules</I> but 
+autonomous <I>structures able to generate optimized-control rules</I></B></FONT><I>&quot;.</I></P>
+<P>
+The main processes we are looking for application of the evolutionary 
+control in the context of combustion plants are:</P>
+<UL>
+    <LI>
+    Gas Turbines (High pressure, co-generation) 
+    <LI>
+    Conventional combustion chamber (liquid, low pressure) 
+    <LI>
+    Waste incinerator (urban refuses, energy/heat) 
+    <LI>
+    Industrial burners (heat production) 
+    <LI>
+    Engine control (vehicles, pollutant reduction, energy saving) 
+</UL>
+<P>
+</P>
+<P>
+<B><FONT SIZE="4" COLOR="#ff0000">The basic idea for the evolutionary 
+control</FONT></B></P>
+<P>
+<FONT SIZE="2">The basi</FONT>c idea consists in the reversal of the 
+concept of the expert systems (ES). In the construction of the ES, the 
+knowledge of the operators is verbally transferred to the ES builder. 
+In our proposal, the process knowledge is not verbally transferred, but 
+it is developed directly by the system through the measurements 
+observation. The driving process is the dynamic building of a model on 
+the basis of the observation of the effects that the regulation actions 
+(acted by the operators or any other existing control systems) have on 
+the plant performance.</P>
+<P>
+The real implementation of this idea consists in the realization of a 
+system which receives measurements from the plant and activates an 
+elaborate process based on the two following main steps (see the scheme 
+of fig. 1 for a resume of the main components).</P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+<IMG SRC="scheme.gif" WIDTH="562" HEIGHT="340" SGI_SRC="scheme.gif"></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<FONT SIZE="2">Fig. 1: </FONT>Scheme of the evolutionary control</P>
+</CENTER><P>
+</P>
+<P>
+<B><FONT SIZE="3" COLOR="#ff0000">The Dynamic State Identification</FONT></B></P>
+<P>
+The plant is monitored with <I>process measurements</I> (values of 
+process variables averaged on the time interval which defines the 
+period of the plant monitoring) and <I>dynamic measurements</I>
+ (sensors with dynamic response following the process dynamic 
+fluctuation). The dynamic measurements are elaborated on the time 
+interval and the chaos invariants are computed. These discriminants 
+describe the <I>plant state</I>. The plant state is identified by the 
+dynamic behavior which is determined by the dynamical system and the 
+parameters values at which the plant is operating. </P>
+<P>
+In 1996 Annunziato and Abarbanel <A HREF="refer.htm"><U><FONT
+ COLOR="#0000ff">[33]</FONT></U></A> outlined a new methodology for the 
+classification problems based on the attractor morphology using few 
+discriminant parameters. This methodology has been successfully applied 
+to the identification of the multiphase flow regime in oil production 
+plants <A HREF="refer.htm"><U><FONT COLOR="#0000ff">[33]</FONT></U></A>, 
+to the characterization of combustion chambers for gas turbines, to the 
+characterization of combustibles pollutants in conventional chambers <A
+ HREF="refer.htm"><U><FONT COLOR="#0000ff">[36]</FONT></U></A>, and 
+finally to the identification of working state of waste incinerators <A
+ HREF="refer.htm"><U><FONT COLOR="#0000ff">[34]</FONT></U></A>. </P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+<A HREF="attracts.mpg"><IMG SRC="attract.jpg" WIDTH="315" HEIGHT="296"
+ BORDER="0" SGI_SRC="attract.jpg"></A></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<B><FONT COLOR="#0000ff">(Movie)</FONT><FONT COLOR="#800000"> An 
+example of 3D attractor of a real flame in a combustion chamber.</FONT></B></P>
+</CENTER><P>
+</P>
+<P>
+The basic idea is to describe the attractor morphology that changes 
+strongly depending on the operative conditions of the process. The non 
+linear dynamics allows a higher sensibility in respect to the linear 
+statistics (i.e. FFT). Through the computation a series of 
+&quot;moments of inertia&quot; for the attractor, extending in order 
+and dimensions, we build a series of shape descriptors, named <I>dynamic 
+moments</I>. These moments are computed via which<I> </I>specify 
+certain points or axes or planes with respect to which the distances to 
+every point of the attractor are computed. For a detailed description 
+of the dynamic discriminants see the above mentioned references.</P>
+<P>
+For the mentioned applications the results obtained in the 
+classification were better than that ones corresponding to the FFT 
+analysis or to the more classical chaotic invariants (fractal 
+dimension, lyapunov coefficients <A HREF="refer.htm"><U><FONT
+ COLOR="#0000ff">[30]</FONT></U></A>).</P>
+<P>
+</P>
+<P>
+<B><FONT SIZE="3" COLOR="#ff0000">The alife environment for control and 
+progressive optimization</FONT></B></P>
+<P>
+An artificial environment is created in parallel to the plant capturing 
+information from the measurements. In this artificial environment we 
+place the <I>live</I> individuals which represent the 
+experimented/observed plant conditions. Furthermore, some other 
+individuals are generated through a genetic reproduction mechanism. 
+Each <I>individual</I> is defined by its genotype which includes the 
+plant state description (derived by the measurements), the process 
+performance (computed on the basis of the measurements), and the 
+regulations state. An evolutionary mechanism selects continuously the 
+plant conditions (individuals) which corresponds to the best 
+performances. An aging mechanism is provided in order to take into 
+account the plant real evolution. </P>
+<P>
+In respect to the environment presented for the TSP optimization we use 
+short filaments instead point in order to increase the probability ot 
+meetings between the individuals. During an evolution cycle, the 
+filament can growth on the <I>head</I> and decrease on the <I>tail</I>. 
+We developed several models for the probability of reducing the 
+filament length. Some models are related to a most probable length or 
+to a fitness of the individual or finally to the filament age. The 
+reduction of the filament length frees space and the life is 
+continuously sustained. </P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+<A HREF="flive3s.mpg"><IMG SRC="flive3.gif" WIDTH="321" HEIGHT="238"
+ BORDER="0" SGI_SRC="flive3.gif"></A></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<A HREF="flive5s1.mpg"><IMG SRC="flive5.gif" WIDTH="319" HEIGHT="239"
+ BORDER="0" SGI_SRC="flive5.gif"></A></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<B><FONT COLOR="#0000ff">(Movie)</FONT><FONT COLOR="#800000"> Two movie 
+examples of the artificial society dynamics.</FONT></B></P>
+</CENTER><P>
+</P>
+<P>
+An evolutionary mechanism selects continuously the plant conditions 
+(individuals) which correspond to the best performances. This mechanism 
+is based on the emulation of the natural selection. The interaction 
+model is constituted by the competition on the basis of the individual 
+fitness (plant performances). In this way the individual with the 
+highest fitness can survive and reproduce. The reproduction is asexual 
+and the sons have small mutations on the regulation state.</P>
+<P>
+Because the individual has an &quot;expected life-time&quot;, very old 
+individuals can die according to a probabilistic model. This aging 
+mechanism is very important to warrant the possibility to lose memory 
+of very old solutions and follow the plant evolution. This mechanism 
+takes into effect the aging of the optimization models due to the 
+changes of not monitored variables (i.e. combustibles in the waste 
+incinerators or modifications introduced during the life of the plant). </P>
+<P>
+The selection mechanisms warrant the selection of the individuals 
+(plant configuration) which have produced the highest fitness (best 
+plant performances). In this sense the Alife environment is a good 
+evaluator of the regulation actions of the operators mixing all the 
+operators actions, judging the single control action in terms of 
+positive or negative effects on plant performances and building the 
+&quot;optimal operator&quot;.</P>
+<P>
+The distinguishing feature of the proposed system is that the mechanism 
+of the mutations introduces new regulation configurations never visited 
+before. Therefore the environment has the possibility to generate and 
+evaluate plant configurations completely new with respect to ones 
+explored by the operators. Fig.2 summarize the optimization and control 
+modules. </P>
+<CENTER><P ALIGN="CENTER">
+<IMG SRC="alife.gif" WIDTH="540" HEIGHT="344" SGI_SRC="alife.gif"></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<B><FONT COLOR="#800000">Fig. 2: The Artificial Life Environment</FONT></B></P>
+</CENTER><P>
+</P>
+<P>
+<B><FONT SIZE="3" COLOR="#ff0000">The plant performances and the 
+process control</FONT></B></P>
+<P>
+For each time period, the process variables are processed in order to 
+compute the performance of the plant (the fitness function) in the 
+current measurement time frame using a fuzzy logic approach. The 
+evaluation of the quality of a plant configuration is made through 
+membership functions applied to the process measurements (pollutants, 
+efficiency, design constraints). The fusion of these functions is 
+obtained through fuzzy operators and it represents the process 
+performance (individual <I>fitness</I>). </P>
+<P>
+In order to evaluate the plant performance in configurations 
+(individuals) never visited before we have developed a 
+&quot;performance map&quot; model. This model is able to evaluate the 
+differences in the process performances induced by a control action (a 
+change in the regulation state) starting from a specific dynamic state. </P>
+<P>
+The dynamic invariants, the regulations actions, and the performance 
+evaluation continuously update a <I>performance map</I> built using a 
+neural network (based on a Radial Basis Function approach). This map 
+gives the possibility to estimate the performance differences induced 
+by regulation actions. Compatibly with the statistical accuracy reached 
+by the performance map, the best individual is taken at each time 
+period as the system suggestion for the regulation actions. The 
+suggestion is sent to filters (rule based) which take into account the 
+compatibility of the suggested regulation actions with the design 
+constraints or stability constraints.</P>
+<P>
+At the beginning, the system is not able to give suggestion but it only 
+learns from the plant measurements. The artificial environment starts 
+to become active and gives its suggestions when the performance map is 
+quite filled. After each cycle of measurements/suggestions the 
+performance map is updated (continuos learning), and new individuals 
+are inserted in the artificial environment. In this way the system 
+follows the plant not-monitored changes and drives the evolution 
+towards better performance.</P>
+<P>
+</P>
+<P>
+<B><FONT SIZE="3" COLOR="#ff0000">The real flames and the flame 
+simulator</FONT></B></P>
+<P>
+We have carried out several recordings in real plants. In this movie we 
+show an example of the monitoring of the flames in a waste incinerator 
+of the Ferrara (Italy - AGEA) town. The video camera records the flames 
+image at 800 frame/sec. In the movie a speed/resolution reduction have 
+carried out and a pseudocolor table has been applied in order to 
+enhance the flame temperature distribution contrast. </P>
+<CENTER><P ALIGN="CENTER">
+<A HREF="visaf3.mpg"><IMG SRC="visaf2.jpg" WIDTH="151" HEIGHT="154"
+ BORDER="0" SGI_SRC="visaf2.jpg"></A></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<B><FONT COLOR="#0000ff">(Movie)</FONT><FONT COLOR="#800000"> Real 
+flames in an industrial incinerator (800 frames/sec, pseudocolors)</FONT></B></P>
+</CENTER><P>
+</P>
+<P>
+In parallel to the real processes experimentation, we have substituted 
+the real process with a software simulator in order to study the best 
+strategy for the control/optimization performed by the alife 
+environment. The simulator is based on a mathematical model used for 
+the flame front modeling: the Kuramoto-Sivashinsky model <A
+ HREF="refer.htm"><U><FONT COLOR="#0000ff">[34]</FONT></U></A>. The 
+goal is to obtain a software demonstration of the optimization features 
+of the alife environment.</P>
+<CENTER><P ALIGN="CENTER">
+</P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<A HREF="kuram6.mpg"><IMG SRC="kuram3.gif" SGI_SRC="kuram3.gif"></A></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<B><FONT SIZE="3" COLOR="#0000ff">(Movie)</FONT><FONT SIZE="3"
+ COLOR="#800000"> example of simulated flames with the 
+Kuramoto-Sivashinsky Model.</FONT></B></P>
+</CENTER><P>
+</P>
+<P>
+The model, includes regulation parameters which influence the flame 
+dynamics (the <I>dynamic state</I>).</P>
+<P>
+For each configuration we compute a <I>process performance</I> on the 
+basis of a model simulating the pollutants emissions and the energy 
+efficiency. In addition to the regulation parameters we have included 
+some disturbance parameters which represent the not controlled 
+variables or the process aging.</P>
+<P>
+Two experiments are in phase of realization: </P>
+<UL>
+    <LI>
+    change the process regulations and verify that the artificial life 
+    environment is able to drive the process to the optimal conditions; 
+    <LI>
+    introduce some disturbances and verify the system is able to find the 
+    new optimal conditions and drive the process to that conditions. 
+</UL>
+<P>
+</P>
+<P>
+<FONT SIZE="2">This specific r</FONT>esearch is partially supported by 
+MURST (Italian Minister of University, Research and Technological 
+Development) for the research in Italy and DOE (Department of Energy) 
+for the research in USA.</P>
+<P>
+The approach is general (not problem-dependent) and can be applied to 
+different fields of the energy production (we are launching several 
+other EU projects for oil industry and combustion processes), such as 
+in the telecommunications, in the applications for the internet network 
+and in the transportation control. </P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+<IMG SRC="line1.gif" WIDTH="623" HEIGHT="7" SGI_SRC="line1.gif"></P>
+</CENTER><P>
+<A HREF="index.htm"><U><FONT COLOR="#0000ff">Back to the index</FONT></U></A></P>
+</BODY>
+</HTML>

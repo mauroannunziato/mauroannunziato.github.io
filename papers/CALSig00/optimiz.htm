@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <META NAME="Generator" CONTENT="Cosmo Create 1.0.3">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+    <TITLE>Optimization</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffd8b1">
+<CENTER><P ALIGN="CENTER">
+<B><FONT SIZE="5">3. </FONT><FONT SIZE="5" COLOR="#0000ff">The 
+development of the optimization</FONT></B></P>
+</CENTER><P>
+</P>
+<P>
+In order to demonstrate the optimization power of the alife 
+environments, we have modified the <I>nagual</I> experiment in order to 
+obtain a continuos substained evolution. In this new environment we 
+have limited the individual extension to a single cell considering only 
+the head of the <I>nagual</I> filaments which became points moving in a 
+two-dimensional lattice.</P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+<A HREF="alife3.mpg"><IMG SRC="optim4.gif" SGI_SRC="optim4.gif"></A></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<B><FONT COLOR="blue">(Movie)</FONT><FONT COLOR="#800000"> Dynamics of 
+the individuals: specie and fitness visualization</FONT></B></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+&nbsp;</P>
+</CENTER><P>
+Furthermore, in the genoma of each individual we incorporate a new 
+block of information that represents the parameters of the specific 
+problem to optimize (configuration or solution). On the base of this 
+information a <I>fitness function</I> is computed which represent the 
+quality connected with the configuration recorded in the genoma. The 
+optimization problem consists in the maximization of this function. In 
+the reproduction, we apply the mutations only in this block of 
+information.</P>
+<P>
+Upon the meeting of two individuals, a mechanism of competition is 
+activated. The competition is based on the value of fitness of the two 
+individuals: an individual which has a higher fitness survives. After a 
+while, individuals which have higher fitness are able to survive and 
+continue the evolution. In this way the best solution, that corresponds 
+to the individual with the highest fitness increases continuously its 
+presence in the population reaching the optimal values.</P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+<IMG SRC="optim1.gif" WIDTH="255" HEIGHT="256" BORDER="2"
+ SGI_SRC="optim1.gif"></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+<B><FONT COLOR="#800000">Visualization of the specie dynamics</FONT></B></P>
+</CENTER><CENTER><P ALIGN="CENTER">
+</P>
+</CENTER><P>
+<B><FONT SIZE="4" COLOR="#ff0000">The benchmark: <I>Travelling Salesman 
+Problem</I></FONT></B></P>
+<P>
+In order to compare the optimization power of the <I>artificial 
+societies</I> we have tested the algorithm on several benchmark 
+problems comparing the results with other approaches which are not 
+problem-dependent. In this section we report the results obtained on 
+the Travelling Salesman Problem.</P>
+<P>
+The Travelling Salesman Problem (TSP <A HREF="refer.htm"><U><FONT
+ COLOR="#0000ff">[20,21]</FONT></U></A>) is one of the most famous and 
+well-studied optimization problems. Its formulation is the following, 
+&quot;Given <I>n</I> towns find the minimal path such that each town, 
+except the first, is visited exactly once&quot;. It is known to be a NP 
+hard problem and researchers <A HREF="refer.htm"><U><FONT
+ COLOR="#0000ff">[23,25,26,27]</FONT></U></A> use this problem as a 
+benchmark for optimization algorithms. In order to test the 
+capabilities of the artificial life optimization strategy, we 
+customized the algorithm to solve TSP and compared the results with 
+those obtained with the most successful algorithms based on the genetic 
+approach. The numerical experiments have been carried out on two 
+classical problems <A HREF="refer.htm"><U><FONT COLOR="#0000ff">[23,24]</FONT></U></A>: 
+Oliver30 (30 towns) and Eil51 (50 towns). </P>
+<P>
+The path, or the ordered list of towns, is the part of the genoma which 
+defines the solution of the problem. The fitness corresponds to the 
+inverse of the global path. In the reproduction, a son has a very 
+similar genoma in respect to its father but a mutation can occurs in 
+the list of the town: in particular, two towns can exchange their 
+reciprocal position in the ordered list. </P>
+<P>
+In order to improve the performances of the artificial society we have 
+included a modification in the algorithm that allowed the possibility 
+to develop cycles of development of the biodiversity in the sense of 
+different genoma and cycles of selection. This effect was achieved by 
+including modification in the reproduction. In most of the cases, the 
+son can survive after the birth only if his fitness is higher than the 
+father's. But in very few cases the son can also survive with a lower 
+fitness. </P>
+<P>
+The effect of this assumption is that the population select the best 
+individuals by decreasing the probability of new births and 
+consequently decreasing the number of living individuals (phase of <I>selection</I>). 
+When an individual survives to the father with a low fitness, he is 
+able to generate another specie of individuals: the probability of 
+birth increases for this species and the number of individuals and 
+their information explodes (phase of <I>development of the biodiversity</I>). 
+Using this approach, the population have a continuous oscillation 
+periodically renewing its content of information. In this figure an 
+example of the population oscillation is reported.</P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+<IMG SRC="popul.gif" WIDTH="776" HEIGHT="596" SGI_SRC="popul.gif"></P>
+</CENTER><P>
+</P>
+<P>
+The following table shows a comparison among the best results achieved 
+by different strategies in terms of path length for the same cities 
+locations. In the first column there are the results obtained by 
+applying a simple greedy strategy of deep one, the second shows the 
+simple Genetic Algorithm <A HREF="refer.htm"><U><FONT COLOR="#0000ff">[18]</FONT></U></A>, 
+the third columns show the outcome of the Dynamic Evolution approach <A
+ HREF="refer.htm"><U><FONT COLOR="#0000ff">[28]</FONT></U></A>. The 
+fourth column exhibits the results of the Ant Colonies Systems <A
+ HREF="refer.htm"><U><FONT COLOR="#0000ff">[22]</FONT></U></A>, the 
+fifth those of the Evolutionary Programming <A HREF="refer.htm"><U><FONT
+ COLOR="#0000ff">[26]</FONT></U></A> and the last column reports the 
+results using the Artificial Societies approach described in this 
+section. </P>
+<P>
+</P>
+<CENTER><P ALIGN="CENTER">
+</P>
+</CENTER><CENTER>
+<TABLE BORDER="1" CELLPADDING="5" CELLSPACING="1" WIDTH="603"
+     BORDERCOLOR="#000000">
+    <TR>
+        <TD WIDTH="14%" VALIGN="TOP">Number of towns</TD>
+        <TD WIDTH="14%" VALIGN="TOP">Greedy</TD>
+        <TD WIDTH="12%" VALIGN="TOP">Simple G.A.</TD>
+        <TD WIDTH="18%" VALIGN="TOP"><P>
+            Dynamic</P>
+            Population </TD>
+        <TD WIDTH="16%" VALIGN="TOP">Ant Colonies</TD>
+        <TD WIDTH="12%" VALIGN="TOP"><P>
+            Evol.</P>
+            Progr.</TD>
+        <TD WIDTH="15%" VALIGN="TOP"><P>
+            Artificial</P>
+            Societies </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="14%" VALIGN="TOP">30</TD>
+        <TD WIDTH="14%" VALIGN="TOP">473.32</TD>
+        <TD WIDTH="12%" VALIGN="TOP">425.94</TD>
+        <TD WIDTH="18%" VALIGN="TOP">424.69</TD>
+        <TD WIDTH="16%" VALIGN="TOP"><B>423.74</B></TD>
+        <TD WIDTH="12%" VALIGN="TOP"><B>423.74</B></TD>
+        <TD WIDTH="15%" VALIGN="TOP"><B><FONT COLOR="#0000ff">423.74</FONT></B></TD>
+    </TR>
+    <TR>
+        <TD WIDTH="14%" VALIGN="TOP">50</TD>
+        <TD WIDTH="14%" VALIGN="TOP">505.77</TD>
+        <TD WIDTH="12%" VALIGN="TOP">443.98</TD>
+        <TD WIDTH="18%" VALIGN="TOP">431.17</TD>
+        <TD WIDTH="16%" VALIGN="TOP">427.96</TD>
+        <TD WIDTH="12%" VALIGN="TOP"><B>427.86</B></TD>
+        <TD WIDTH="15%" VALIGN="TOP"><B><FONT COLOR="#0000ff">427.86</FONT></B></TD>
+    </TR>
+</TABLE>
+</CENTER>
+<P>
+</P>
+<P>
+As one can see, the results reached by the present approach are the 
+best ones for both test cases considered. </P>
+<P>
+Obviously, we cannot generalize this conclusion to every optimization 
+problem or for the specific TSP problem (we have considered only not 
+problem-dependent algorithms), but it is sufficient to demonstrate that 
+the optimization power of this approach is at least similar to the more 
+classical genetic approaches. Our interest is not only limited to the 
+optimization power but also include to the ability to develop new 
+configurations due the much more open structure. In fact, in respect to 
+the genetic algorithms, the artificial society has an oscillating 
+population, the possibility to use the space localization to develop 
+local societies (local evolution) and finally the dimension of the 
+self-organization.</P>
+<CENTER><P ALIGN="CENTER">
+<IMG SRC="line1.gif" WIDTH="623" HEIGHT="7" SGI_SRC="line1.gif"></P>
+</CENTER><P>
+<A HREF="index.htm"><U><FONT COLOR="#0000ff">Back to the index</FONT></U></A></P>
+</BODY>
+</HTML>
