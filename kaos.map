@@ -1,0 +1,23 @@
+###_sgi-version: 1
+###_sgi-format: netsite
+###_sgi-date: (968694759) Mon Sep 11 10:52:39 2000
+###_sgi-document: KAOS
+
+#
+rect patterns.htm 10,3 87,21
+
+#
+rect attract.htm 95,3 190,21
+
+#
+rect fractals.htm 198,3 271,21
+
+#
+rect evoluz.htm 275,3 366,21
+
+#
+rect vibrat.htm 379,3 464,21
+
+#
+rect automi.htm 473,3 558,21
+
